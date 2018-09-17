@@ -36,6 +36,4 @@ match e with
 end
 
 theorem konigsberg : ¬ (∃ l a b, eulerian (E,V,Ter) l (a,b)) :=
-begin
-end 
-
+sorry
