@@ -9,8 +9,9 @@ variables α β  : Type
 
 instance :lattice.semilattice_inf_top (finset β)
 :=
-begin
-end
+sorry
+
+
 
 theorem inclusion_exclusion_usual [decidable_eq β] {s : finset α} {t : α → finset β}: 
   (((s.bind t).card):ℝ) =
@@ -18,23 +19,19 @@ theorem inclusion_exclusion_usual [decidable_eq β] {s : finset α} {t : α → 
   (λ k, (-1:ℝ)^( k+1) * ((finset.powerset s).filter (λ s₁:finset α, s₁.card=k)).sum 
    (λ s₁:finset α, (s₁.inf t).card))  
 :=
-begin
+sorry
 
-end
 
 instance  :decidable_pred (λ (s₁ : finset α), ¬s₁ = ∅):= 
-begin
+sorry
 
-end
 
 theorem inclusion_exclusion [decidable_eq β] {s : finset α} {t : α → finset β}: 
   (((s.bind t).card):ℝ) =
   ((finset.powerset s).filter (λ s₁, (s₁ ≠  ∅))).sum 
      (λ s₁:finset α, (-1:ℝ)^(s₁.card+1) * (s₁.inf t).card) 
 :=
-begin
-end
-
+sorry
 
 theorem special_inclusion_exclusion [decidable_eq β] {s : finset α} {t : α → finset β}
 (f:ℕ → ℕ) (h:∀ k A, A∈ (finset.powerset s).filter (λ s₁:finset α, s₁.card =k) → (A.inf t).card=f k):
@@ -42,9 +39,7 @@ theorem special_inclusion_exclusion [decidable_eq β] {s : finset α} {t : α �
 ((finset.range (s.card + 1)).filter (λ k, k>0)).sum 
 (λ k, (-1:ℝ)^( k+1) * (choose (s.card) k) * (f k)) 
 :=
-begin
-end
-
+sorry
 
 
 
@@ -52,17 +47,13 @@ theorem Mobius_inclusion_exclusion {g f:finset α → ℝ}
 (h: ∀ A, g A= (finset.powerset A).sum (λ s, f s)):
 ∀ A, f A= (finset.powerset A).sum (λ s, (-1:ℝ)^(A.card -s.card) * g s)
 :=
-begin
-end
-
+sorry
 
 theorem inclusion_exclusion_sysmetric {g f:finset α → ℝ} 
 (h: ∀ A, g A= (finset.powerset A).sum (λ s, (-1)^(s.card)* f s)):
 ∀ A, f A= (finset.powerset A).sum (λ s, (-1:ℝ)^(s.card) * g s)
 :=
-begin
-end
-
+sorry
 
 
 end inclusion_exclusion_finset
@@ -85,7 +76,6 @@ theorem measure_inclusion_exclusion:
    (λ k, ((finset.powerset s).filter (λ s₁:finset α, s₁.card=k)).sum  
        (λ s₁:finset α,μ (⋂b∈s₁, t b)))
 :=
-begin
-end
+sorry
 
 end measure_inclusion_exclusion
